@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "8e2fbc5f-c9f9-447f-9a5b-089f60d66ad9",
+		"name": "clear-solutions-test-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19230158"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"John\",\r\n    \"lastName\" : \"Doe\",\r\n    \"email\" : \"johndoe1@mail.com\",\r\n    \"birthDate\" : \"01.01.2003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/user/create",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get all by date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dateFrom\" : \"01.01.2001\",\r\n    \"dateTo\" : \"01.01.2005\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/user/get-all",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"user",
+						"get-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{localhost}}/user/delete",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user (full info)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 5,\r\n    \"firstName\" : \"John\",\r\n    \"lastName\" : \"John\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/user/edit/name",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"user",
+						"edit",
+						"name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user (name)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 5,\r\n    \"firstName\" : \"John\",\r\n    \"lastName\" : \"John\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/user/edit/name",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"user",
+						"edit",
+						"name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user (email)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 5,\r\n    \"firstName\" : \"John\",\r\n    \"lastName\" : \"John\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/user/edit/name",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"user",
+						"edit",
+						"name"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
