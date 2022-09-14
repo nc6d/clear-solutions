@@ -1,0 +1,11 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/clear-solutions
+        username: postgres
+        password: postgres
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+user:
+    age:
+        required: 18
