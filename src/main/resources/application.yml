@@ -5,6 +5,10 @@ spring:
         password: postgres
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
+    jackson:
+        date-format: dd.MM.yyyy
+        serialization:
+            write-dates-as-timestamps: false
 
 user:
     age:

@@ -30,8 +30,13 @@ public class UserController {
         return ResponseEntity.ok(userService.createUser(modelMapper.map(createDto, User.class)));
     }
 
-    @PostMapping("/delete")
-    public void delete(@RequestParam("userId") Long userId) throws Status410UserNotExistsException {
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getById(@PathVariable Long id) throws Status410UserNotExistsException{
+        return ResponseEntity.ok(userService.getUserById(id));
+    }
+
+    @DeleteMapping("/delete/{userId}")
+    public void delete(@PathVariable Long userId) throws Status410UserNotExistsException {
         userService.deleteUserById(userId);
     }
 

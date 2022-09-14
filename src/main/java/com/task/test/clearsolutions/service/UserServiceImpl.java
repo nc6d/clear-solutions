@@ -41,6 +41,12 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public User getUserById(Long userId) {
+        return userRepository.findById(userId).orElseThrow(
+                () -> new Status410UserNotExistsException("User not found"));
+    }
+
 
     public User updateAll(User user) throws Status410UserNotExistsException {
         return userRepository.findById(user.getId())
@@ -56,7 +62,8 @@ public class UserServiceImpl implements UserService {
 
 
                     return userRepository.save(finalUser);
-                }).orElseThrow(() -> new Status410UserNotExistsException(
+                })
+                .orElseThrow(() -> new Status410UserNotExistsException(
                         String.format("User %s not exists", user.getEmail())));
 
     }
@@ -92,11 +99,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUserById(Long userId) {
-        userRepository.findById(userId).ifPresentOrElse(
-                user -> userRepository.deleteById(userId),
-                () -> {
-                    throw new Status410UserNotExistsException("User (id: " + userId + ") not exists");
-                });
+        userRepository.findById(userId).ifPresent(
+                user -> userRepository.deleteById(userId));
     }
 
     @Override

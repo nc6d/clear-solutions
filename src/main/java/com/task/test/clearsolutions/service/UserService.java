@@ -9,8 +9,11 @@ import java.util.List;
 public interface UserService {
     User createUser(User user) throws Status409UserAlreadyRegisteredException, Status431UserIsUnderAgeException;
 
+    User getUserById(Long userId);
+
     void deleteUserById(Long userId);
 
     List<User> findAllUsers();
+
 
 }
