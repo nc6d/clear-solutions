@@ -1,6 +1,6 @@
 spring:
     datasource:
-        url: jdbc:postgresql://localhost:5432/clear-solutions
+        url: jdbc:postgresql://postgresqldb:5432/clear-solutions
         username: postgres
         password: postgres
     jpa:
